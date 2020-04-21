@@ -39,11 +39,11 @@ const Repository: React.FC = () => {
   const [issues, setIssues] = useState<Issue[]>([]);
 
   useEffect(() => {
-    api.get(`/repos/${params.repository}`).then((response) => {
+    api.get(`/repos/${params.repository}`).then(response => {
       setRepository(response.data);
     });
 
-    api.get(`/repos/${params.repository}/issues`).then((response) => {
+    api.get(`/repos/${params.repository}/issues`).then(response => {
       setIssues(response.data);
     });
   }, [params.repository]);
@@ -88,7 +88,7 @@ const Repository: React.FC = () => {
       )}
 
       <Issues>
-        {issues.map((issue) => (
+        {issues.map(issue => (
           <a
             key={issue.id}
             href={issue.html_url}

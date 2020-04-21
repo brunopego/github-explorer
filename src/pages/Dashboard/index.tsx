@@ -66,7 +66,7 @@ const Dashboard: React.FC = () => {
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input
           value={newRepo}
-          onChange={(e) => setNewRepo(e.target.value)}
+          onChange={e => setNewRepo(e.target.value)}
           placeholder="Digite o nome do repositório"
         />
         <button type="submit">Pesquisar</button>
@@ -75,7 +75,7 @@ const Dashboard: React.FC = () => {
       {inputError && <Error>{inputError}</Error>}
 
       <Repositories>
-        {repositories.map((repository) => (
+        {repositories.map(repository => (
           <Link
             key={repository.full_name}
             to={`/repositories/${repository.full_name}`}
